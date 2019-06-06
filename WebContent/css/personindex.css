@@ -1,0 +1,222 @@
+body{
+			margin: 0px;
+			padding: 0px;
+			background-color: #f5f7fa;
+		}
+		.navbar{
+			width:100%;
+			height: 38px;
+			background-color: #222222;
+			position: relative;
+			margin-bottom:0;
+			top: 0;
+			left: 0;
+		}
+		.navbar ul{
+			margin-right: 227px;
+			margin-top: 6px;
+			margin-bottom: 0;
+			float: right;
+			line-height: 38px;
+		}
+		.navbar li {
+			list-style: none;
+			float: left;
+			margin-left: 20px;
+		}
+		.navbar li a{
+			color: #ccccab;
+			text-decoration: none;
+		}
+		.navbar li a:hover{
+			color: #fff;
+		}
+
+		.number{
+			float: right;
+			width: 20px;
+			height: 20px;
+			background-color: red;
+			text-align: center;
+			line-height: 20px;
+			border-radius: 5px;
+			margin-top: 9px;
+		}
+	.container{
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 75px;
+		background-color: #fff;
+		border-bottom: 5px solid #239bd2
+	}
+	
+	.container {
+		display: block;
+		height: 75px;
+		list-style: none;
+		
+	}
+	.container .logo{
+		width:300px;
+		height:64px;
+		margin-left: 73px;
+	/*	margin-top: 10px;*/
+		float: left;
+	}
+	.container li{
+		float: left;
+		font-size: 20px;
+		line-height: 75px;
+		margin-right: 35px;
+		
+	}
+	.container li a{
+		width: 100%;
+		height: 100%;
+		display: block;
+		text-decoration: none;
+		color: #333333;
+	}
+	.container li a:hover{
+		color: lightblue;
+	}
+	.container .qq img{
+		width: 50px;
+		height: 50px;
+		float: right;
+		margin-left: 1px;
+		margin-right: 30px;
+		background-color: gold;
+		margin-top: 11px;
+	}
+	.container .wechart img{
+		width: 50px;
+		height: 50px;
+		float: right;
+		margin-left: 363px;
+		margin-right: 4px;
+		background-color: gold;
+		margin-top: 11px;
+	}
+	
+	
+	.main_con{
+		position: relative;
+		width: 1117px;
+		
+		/*border: 1px solid #000;*/
+		margin: 25px auto 0;
+		background-color: #ffffff;
+	}
+	.main_con .content{
+		width: 100%;
+		height: 205px;
+		background-color: #8bd8db;
+	}
+	.main_con .content_con{
+		padding-bottom: 30px;
+	}
+	.main_con .portrait{
+		position: absolute;
+		width: 195px;
+		height: 195px;
+		top:5px;
+		left: 103px;
+		border-radius: 195px;
+		background-color: gold;
+	}
+	.main_con .content .name{
+		position: absolute;
+		top: 161px;
+		left:375px;
+		font-size: 26px;
+
+	}
+	.main_con .content .sex,.nation{
+		position: absolute;
+		font-size: 20px;
+		top: 165px;
+
+	}
+	.main_con .content .sex{
+		left: 483px;
+	}
+	.main_con .content .nation{
+		left: 532px;
+	}
+	
+	.main_con .title {
+		text-indent: 1em;
+		background-color: #c5eced;
+		font-size: 22px;
+		font-family: 'Microsoft YaHei';
+		color: #333333;
+	}
+	.main_con .base .insert{
+		width: 687px;
+		height: 60px;
+		border:1px dotted #239bd2;
+		margin: 25px auto 10px;
+		text-align: center;
+		color: #239bd2;
+		padding-top: 30px;
+		padding-top: 20px;
+
+	}
+	.main_con .base .insert:hover{
+		background-color: #c5eced;
+	}
+	.main_con .content_con{
+		margin-bottom: 20px;
+	}
+	.frame{
+		position: fixed;
+		left: 50%;
+		top: 200px;
+		/*margin-left: -250px;*/
+		width: 500px;
+		background-color: gold;
+		border-radius: 10px;
+	}
+	.input-group{
+		margin-bottom: 5px;
+	}
+	.input-group span{
+		width: 68.8px;
+	}
+	.input-group .form-control{
+		width: 499.2px;
+	}
+	
+	.info{
+		margin: 15px auto 15px;
+		text-indent: 20px;
+	}
+	
+	.info label{
+		color: #6e715a;
+		font-size: 15px;
+		font-weight: normal;
+	}
+	.info div{
+		margin-top: 10px;
+	}
+	.footer{
+		width: 100%;
+		height: 120px;
+		margin-bottom: 0px;
+		background-color: #333;
+		margin-top: 50px;
+		color: #fff;
+		text-align: center;
+		padding-top: 20px;
+
+	}
+	.footer span{
+		
+		font-size: 15px;
+	
+	}
+		
+

@@ -1,0 +1,52 @@
+body{
+	padding: 0;
+	margin: 0;
+	position: relative;
+	background-color: lightblue;
+}
+.entrance{
+	position: absolute;
+	left: 50%;
+	margin-left: -400px;
+	height: 400px;
+	width: 800px;
+	margin-top: 100px;
+	border:1px solid #999;
+	border-radius: 10px;
+	background-color: rgb(0,0,0,0.2) ;
+	
+}
+
+.entrance div{
+	border:1px solid #999;
+	width: 300px;
+	height: 200px;
+	border-radius: 10px;
+	margin-top: 95px;
+	text-align: center;
+	line-height: 200px;
+}
+.entrance div a span{
+	font-size: 20px;
+}
+.entrance div:nth-child(1){
+	background-color: gold;
+	float: left;
+	color:green;
+	margin-left: 40px;
+}
+.entrance div:nth-child(1) a span{
+	
+	color:green;
+	
+}
+
+.entrance div:nth-child(2){
+	background-color: green;
+	
+	float: right;
+	margin-right: 40px;
+}
+.entrance div:nth-child(2) a span{
+	color:gold;
+}
