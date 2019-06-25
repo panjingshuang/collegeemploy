@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ApplyJobDao">
+    <insert id="insertinfo" parameterType="com.po.MyApplyJob" keyProperty="id" useGeneratedKeys="true">
+        insert into applyjob(id,collegeid,jobid,status) values(0,#{collegeid},#{jobid},1)
+    </insert>
+    <select id="selectCountbyids" parameterType="map" resultType="Integer">
+        select count(*) from applyjob where collegeid =#{collegeid} and jobid =#{jobid};
+    </select>
+    <select id="selectListByCid" parameterType="Integer" resultType="Integer">
+        select jobid from collegejob where collegeid =#{collegeid}
+    </select>
+    <select id="selectJobIdByStatus" parameterType="map" resultType="Integer">
+        select jobid from applyjob where collegeid =#{collegeid} and status = #{status}
+    </select>
+    <select id="selectJobNumberByjobid" parameterType="Integer" resultType="Integer">
+        select count(*) from applyjob where jobid =#{jobid};
+    </select>
+    <update id="updateStatus" parameterType="com.po.MyApplyJob">
+        update applyjob set status= #{status} where collegeid=#{collegeid} and jobid =#{jobid}
+    </update>
+</mapper>

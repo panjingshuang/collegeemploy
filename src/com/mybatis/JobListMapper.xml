@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JobListDao">
+    <select id="selectAllinfo" resultType="com.po.MyJobList">
+        select * from position
+    </select>
+    <select id="selectCountById" resultType="Integer">
+        select * from position where id = #{id}
+    </select>
+    <select id="selectidByCoropid" resultType="Integer" parameterType="Integer">
+        select id from position where corpid = #{corpid}
+    </select>
+
+    <select id="selectJobinfoBycorpid" parameterType="Integer" resultMap="JobAndEnterInfo">
+        select * from position where corpid = #{id}
+    </select>
+    <resultMap type="com.po.MyJobList" id="JobAndEnterInfo">
+        <id property="id" column="id"/>
+        <result property="jobName" column="jobName"/>
+        <result property="corpid" column="corpid"/>
+        <result property="salary" column="salary"/>
+        <result property="degreeName" column="degreeName"/>
+        <result property="areaCodeName" column="areaCodeName"/>
+        <result property="major" column="major"/>
+        <result property="mainContent" column="mainContent"/>
+
+        <association property="myEnterpriseInfo" javaType="com.po.MyEnterpriseInfo">
+            <id property="id" column="enterpriseId"/>
+            <result property="shotName" column="shotName"/>
+            <result property="name" column="name"/>
+            <result property="tags" column="tags"/>
+            <result property="type" column="type"/>
+            <result property="industry" column="industry"/>
+            <result property="description" column="description"/>
+            <result property="divisionName" column="divisionName"/>
+            <result property="postCode" column="postCode"/>
+            <result property="address" column="address"/>
+            <result property="city" column="city"/>
+            <result property="website" column="website"/>
+            <result property="staffSize" column="staffSize"/>
+            <result property="enterprise_id" column="enterprise_id"/>
+        </association>
+    </resultMap>
+    <select id="selectJobAndCompany" resultMap="JobAndEnterInfo">
+        select j.*,e.* from position as j ,entertpriseinfo as e where j.corpid = e.id
+    </select>
+    <select id="limitJobAndCompany" parameterType="Integer" resultMap="JobAndEnterInfo">
+        select j.*,e.* from position as j ,entertpriseinfo as e where j.corpid = e.id
+    </select>
+    <select id="selectJobinfoByid" parameterType="Integer" resultMap="JobAndEnterInfo">
+        select j.*,e.* from position as j ,entertpriseinfo as e where j.corpid = e.id and j.id = #{id}
+    </select>
+    <select id="selectAllinfoByType" parameterType="String" resultType="com.po.MyJobList">
+        select count(*) from position as j ,entertpriseinfo as e where j.corpid = e.id and e.type= #{type}
+    </select>
+
+
+    <resultMap type="com.po.MyJobAndCollege" id="getjobAndcollege">
+        <id property="id" column="id"/>
+        <result property="jobName" column="jobName"/>
+        <result property="corpid" column="corpid"/>
+        <result property="salary" column="salary"/>
+        <result property="degreeName" column="degreeName"/>
+        <result property="areaCodeName" column="areaCodeName"/>
+        <result property="major" column="major"/>
+        <result property="mainContent" column="mainContent"/>
+
+        <collection property="myCollege" ofType="com.po.MyCollege">
+            <id property="id" column="collegeid"/>
+            <result property="shotName" column="shotName"/>
+            <result property="name" column="name"/>
+            <result property="sex" column="sex"/>
+            <result property="password" column="password"/>
+            <result property="hometown" column="hometown"/>
+            <result property="birth" column="birth"/>
+            <result property="id_card" column="id_card"/>
+            <result property="nation" column="nation"/>
+            <result property="phone" column="phone"/>
+            <result property="email" column="email"/>
+            <result property="worklocation" column="worklocation"/>
+            <result property="industry" column="industry"/>
+            <result property="position" column="position"/>
+            <result property="salary" column="salary"/>
+            <result property="selfevaluation" column="selfevaluation"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="getJobAndCollege" parameterType="map" resultMap="getjobAndcollege">
+        select j.*,e.* from position as j,college as e ,applyjob as a where j.id = a.jobid and a.collegeid = e.id and
+        a.jobid = #{jobid} and a.status = #{status};
+    </select>
+
+
+</mapper>

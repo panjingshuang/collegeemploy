@@ -1,0 +1,90 @@
+.collection_main {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    margin-left: -585px;
+    width: 1170px;
+    border: 1px solid #ccc;
+    height: 600px;
+    background-color: #fff;
+}
+
+.collection_title {
+    margin-top: 20px;
+    color: #000;
+    font-size: 18px;
+    margin-left: 282px;
+    cursor: pointer;
+}
+
+.collection_title span {
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ccc;
+
+}
+
+.collection_title span:hover {
+    padding-bottom: 10px;
+    border-bottom: 3px solid green;
+
+}
+
+.collection_main .box {
+    position: relative;
+    width: 350px;
+    height: 180px;
+    margin-left: 18px;
+    margin-top: 10px;
+    padding-left: 0px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+
+.collection_main .title {
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    color: #239bd2;
+    font-size: 18px;
+}
+
+.collection_main .companyShortName {
+    position: absolute;
+    top: 58px;
+    left: 23px;
+
+}
+
+.collection_main .location {
+    position: absolute;
+    top: 91px;
+    left: 23px;
+}
+
+.collection_main .salary {
+    position: absolute;
+    color: gold;
+    top: 91px;
+    left: 174px;
+}
+
+.collection_main .btns {
+    position: absolute;
+    top: 128px;
+    left: 23px;
+}
+
+.collection_main .del {
+    position: absolute;
+    top: 149px;
+    left: 305px;
+    cursor: pointer;
+    display: none;
+
+}
+
+
+.collection_main .box:hover {
+    background-color: rgb(150, 205, 205, 0.3);
+}

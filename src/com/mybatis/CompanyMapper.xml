@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.EnterpriseInfoDao">
+    <select id="selectAllinfo" resultType="com.po.MyEnterpriseInfo">
+        select * from entertpriseinfo
+    </select>
+    <select id="selectComapnyByid" parameterType="Integer" resultType="com.po.MyEnterpriseInfo">
+        select * from entertpriseinfo where id = #{id}
+    </select>
+    <select id="getCompanyList"  resultType="com.po.MyJobtype">
+        select * from jobtype
+    </select>
+     <select id="getIndustryList"  resultType="com.po.MyIndustry">
+        select * from industry
+    </select>
+
+</mapper>

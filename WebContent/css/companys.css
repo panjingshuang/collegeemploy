@@ -1,0 +1,18 @@
+.info li {
+    position: relative;
+}
+
+.info li a {
+    position: absolute;
+    top: 38px;
+    left: 152px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.info li .locations {
+    position: absolute;
+    top: 83px;
+    left: 152px;
+
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CollectionJobDao">
+    <insert id="insertinfo" parameterType="com.po.MyCollectionJob" keyProperty="id" useGeneratedKeys="true">
+        insert into collegejob(id,collegeid,jobid) values(0,#{collegeid},#{jobid})
+    </insert>
+    <select id="selectCountbyids" parameterType="map" resultType="Integer">
+        select count(*) from collegejob where collegeid =#{collegeid} and jobid =#{jobid};
+    </select>
+    <select id="selectListByCid" parameterType="Integer" resultType="Integer">
+        select jobid from collegejob where collegeid =#{collegeid}
+    </select>
+    <delete id="deleteJobById" parameterType="map">
+        delete from collegejob where collegeid =#{collegeid} and jobid =#{jobid};
+    </delete>
+</mapper>

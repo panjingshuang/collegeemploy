@@ -1,0 +1,136 @@
+.apply_main {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    margin-left: -585px;
+    width: 1170px;
+    height: 600px;
+    background-color: #fff;
+}
+
+.apply_main .title {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    width: 1150px;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 10px;
+
+}
+
+.apply_main .title span {
+    font-size: 20px;
+    margin-left: 0px;
+    margin-right: 25px;
+    margin-top: 20px;
+    color: #696969;
+    cursor: pointer;
+    /*	border-bottom: 3px solid #ccc;*/
+    padding-bottom: 13.25px;
+
+}
+
+.apply_main .input_div {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+}
+
+.input-group .form-control {
+    width: 283.2px;
+}
+
+.input-group span {
+    width: 32.8px;
+}
+
+.apply_main .title span:hover {
+    border-bottom: 3px solid green;
+}
+
+.apply_main .context {
+    position: relative;
+    top: 30px;
+    left: 10px;
+    right: 10px;
+    width: 1150px;
+    height: 480px;
+}
+
+.apply_main .context ul {
+    list-style: none;
+    padding-left: 20px;
+
+}
+
+.apply_main .context li {
+    position: relative;
+    border-radius: 5px;
+    left: 5px;
+    height: 60px;
+    width: 1086px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.apply_main .context li:hover {
+    background-color: #96CDCD;
+}
+
+.apply_main .JobName {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+
+    font-size: 18px;
+    color: #009ACD;
+
+}
+
+.apply_main .location {
+    position: absolute;
+    top: 33px;
+    left: 10px;
+    font-size: 15px;
+    color: #696969;
+}
+
+
+.apply_main .companyName {
+    position: absolute;
+    top: 5px;
+    left: 443px;
+    font-size: 18px;
+    color: #009ACD;
+}
+
+.apply_main .type {
+    position: absolute;
+    top: 33px;
+    left: 443px;
+    font-size: 15px;
+    color: #696969;
+}
+
+.apply_main .status {
+    position: absolute;
+    top: 20px;
+    right: 51px;
+}
+
+.active {
+    border-bottom: 3px solid green;
+}
+
+.pre-scrollable {
+    max-height: 457px;
+    overflow-y: scroll;
+}
+
+
+.Tobehired button {
+    float: right;
+    margin-top: 12px;
+    margin-right: 10px;
+}

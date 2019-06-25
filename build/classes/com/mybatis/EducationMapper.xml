@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.EducationDao">
+    <select id="selectAllinfo" resultType="com.po.MyEducation">
+        select * from eduction
+    </select>
+    <insert id="insertinfo" parameterType="com.po.MyEducation" keyProperty="id" useGeneratedKeys="true">
+        insert into eduction (id,school,education,major,starttime,endtime,college_id,department) values
+        (0,#{school},#{education},#{major},#{starttime},#{endtime},#{college_id},#{department})
+    </insert>
+
+    <select id="selectEducation" parameterType="map" resultType="com.po.MyEducation">
+        select * from eduction where college_id = #{id}
+    </select>
+</mapper>
