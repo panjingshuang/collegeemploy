@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+<<<<<<< HEAD
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
+=======
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+<<<<<<< HEAD
 
     <context:component-scan base-package="com.service"></context:component-scan>
     <context:component-scan base-package="com.controller"></context:component-scan>
@@ -58,4 +68,22 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+=======
+	
+	<context:component-scan base-package="com.service"></context:component-scan>
+	<context:component-scan base-package="com.controller"></context:component-scan>
+	<mvc:annotation-driven/>
+	<mvc:resources location="/css/" mapping="/css/**" ></mvc:resources>
+	<mvc:resources location="/html/" mapping="/html/**" ></mvc:resources>
+	<mvc:resources location="/img/" mapping="/img/**" ></mvc:resources>
+	<mvc:resources location="/js/" mapping="/js/**" ></mvc:resources>
+	<mvc:resources location="/fonts/" mapping="/fonts/**" ></mvc:resources>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		id="internalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+		
+	</bean> 
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 </beans>

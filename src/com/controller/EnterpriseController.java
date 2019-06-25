@@ -1,6 +1,7 @@
 package com.controller;
 
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,11 +10,19 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+=======
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dao.ApplyJobDao;
@@ -28,11 +37,18 @@ import com.po.MyJobAndCollege;
 import com.po.MyJobtype;
 import com.service.EnterpriseService;
 import com.sun.org.apache.bcel.internal.generic.NEW;
+=======
+
+import com.service.EnterpriseService;
+
+
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 
 
 @Controller
 @RequestMapping("/enterprise")
 public class EnterpriseController {
+<<<<<<< HEAD
     @Autowired
 //	private EnterpriseDao enterpriseDao;
     private EnterpriseService enterServie;
@@ -180,4 +196,30 @@ public class EnterpriseController {
     	//插入不成功就返回到register页面进行错误提示
         return "redirct:login";
     }
+=======
+	@Autowired
+//	private EnterpriseDao enterpriseDao;
+	private EnterpriseService enterServie;
+
+	@RequestMapping("/login")
+	public String login () {
+		return "enterpriseLogin";
+	}
+	@RequestMapping("/verificationLogin")
+	public String verificationLogin(HttpServletRequest request,Model model) {
+		String phone = request.getParameter("college");
+		String password = request.getParameter("password");
+		Map<String, Object> map  = new HashMap<>();
+		map.put("phone", phone);
+		map.put("password",password);
+		if(enterServie.selectEnterpriseByphone(map)) {
+			return "main";
+		}else {
+			model.addAttribute("error", "密码或用户名错误");
+			return "enterpriseLogin";
+		}
+
+		
+	}
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 }

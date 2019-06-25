@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
+<<<<<<< HEAD
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
@@ -95,4 +96,53 @@
     </select>
 
 
+=======
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JobListDao">
+	<select id="selectAllinfo" resultType="com.po.MyJobList">
+		select * from position
+	</select>
+	<select id="selectJobinfoByid"  parameterType="Integer" resultMap="JobAndEnterInfo">
+		select * from position where id = #{id}
+	</select>
+	<resultMap type="com.po.MyJobList" id="JobAndEnterInfo">
+		<id property="id" column="id"/>
+		<result property="jobName" column="jobName"/>
+		<result property="corpid" column="corpid"/>
+		<result property="salary" column="salary"/>
+		<result property="degreeName" column="degreeName"/>
+		<result property="areaCodeName" column="areaCodeName"/>
+		<result property="major" column="major"/>
+		<result property="mainContent" column="mainContent"/>
+		
+		<association property="myEnterpriseInfo" javaType="com.po.MyEnterpriseInfo">
+			<id property="id"  column="enterpriseId" />
+			<result property="shotName" column="shotName"/>
+			<result property="name" column="name"/>
+			<result property="tags" column="tags"/>
+			<result property="type" column="type"/>
+			<result property="industry" column="industry"/>
+			<result property="description" column="description"/>
+			<result property="divisionName" column="divisionName"/>
+			<result property="postCode" column="postCode"/>
+			<result property="address" column="address"/>
+			<result property="city" column="city"/>
+			<result property="website" column="website"/>
+			<result property="staffSize" column="staffSize"/>
+			<result property="enterprise_id" column="enterprise_id"/>									
+		</association>
+	</resultMap>
+	<select id="selectJobAndCompany"  resultMap="JobAndEnterInfo">
+		select j.*,e.* from position as j ,entertpriseinfo as e where j.corpid = e.id
+	</select>
+	<select id="limitJobAndCompany"  parameterType="Integer" resultMap="JobAndEnterInfo">
+		select j.*,e.* from position as j ,entertpriseinfo as e where j.corpid = e.id
+	</select>
+	<select id="selectAllinfoByType" parameterType="String" resultType="com.po.MyJobList">
+		select count(*) from position as j ,entertpriseinfo as e where  j.corpid  = e.id and e.type= #{type}
+	</select>
+	
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 </mapper>

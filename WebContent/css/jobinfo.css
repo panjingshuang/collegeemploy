@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .main {
     position: relative;
     width: 960px;
@@ -95,4 +96,91 @@
     font-size: 17px;
     text-indent: 5px;
     margin-bottom: 15px;
+=======
+.main{
+	position: relative;
+	width: 960px;
+	padding-bottom:20px;
+	border:1px solid #cdd1d3;
+	left: 50%;
+	margin-left: -480px;
+	margin-top: 20px;
+	background-color: #fff;
+}
+.main .head{
+	position: relative;
+	width: 100%;
+	border-bottom:1px solid #cdd1d3;
+	margin-bottom:20px;
+	height: 250px;
+	background-color: #eff7fa;
+}
+.main .head .JobName{
+	position: absolute;
+	color: #239bd2;
+	font-size: 30px;
+	top:43px;
+	left: 39px;
+}
+.main .head .education{
+	position: absolute;
+	color: #383838;
+	top: 88px;
+	left: 39px;
+	font-size: 17px;
+}
+.main .head .education span{
+	color: #ff9900;
+}
+.main .head .zhuanye{
+	position: absolute;;
+	top: 126px;
+	left: 39px;
+	color: #383838;
+	font-size: 17px;
+}
+.main .head .site_tag{
+	position: absolute;;
+	top: 170px;
+	left: 37px;
+	font-size: 17px;
+	color: #383838;
+}
+#collection{
+	position: absolute;
+	top: 65px;
+	font-size: 25px;
+	right: 142px;
+}
+#report{
+	position: absolute;
+	top: 65px;
+	font-size: 25px;
+	color: gold;
+	right: 103px;
+}
+#forward{
+	position: absolute;
+	top: 65px;
+	font-size: 25px;
+	color: #30a81a;
+	right: 65px;
+}
+.main button{
+	position: absolute;
+	bottom: 49px;
+	right: 56px;
+	width: 126px;
+	font-size: 18px;
+}
+.content{
+	font-size:15px;
+	margin:0 20px;
+}
+.content .title{
+	border-left:5px solid #239bd2;
+	font-size:17px;
+	text-indent:5px;
+	margin-bottom:15px;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 }

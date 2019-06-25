@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
+<<<<<<< HEAD
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
@@ -11,4 +12,16 @@
         select * from enterprise where phone = #{phone} and password = #{password}
     </select>
   
+=======
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.EnterpriseDao">
+	<select id="selectAllinfo" resultType="com.po.MyEnterprise">
+		select * from enterprise 
+	</select>
+	<select id="selectEnterpriseByphone" parameterType="map" resultType="com.po.MyEnterprise">
+		select * from enterprise where phone = #{phone} and password = #{password}
+	</select>
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 </mapper>

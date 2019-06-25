@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
+<<<<<<< HEAD
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
@@ -30,4 +31,30 @@
         update college set selfevaluation= #{selfevaluation}where phone=#{phone}
     </update>
 
+=======
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CollegeDao">
+	<select id="selectAllinfo" resultType="com.po.MyCollege">
+		select * from college 
+	</select>
+	<select id="selectCollegeByphone" parameterType="map" resultType="com.po.MyCollege">
+		select * from college where phone = #{phone} and password = #{password}
+	</select>
+	<select id="getCollegeId" parameterType="map" resultType="Integer">
+		select id from college where phone = #{phone} and password = #{password}
+	</select>
+	<update id="updatebaseinfo" parameterType="com.po.MyCollege" >
+		update college set email= #{email} , hometown = #{hometown},nation =#{nation} where phone=#{phone}
+	</update>
+	<update id="updatejob_expectation" parameterType="com.po.MyCollege" >
+		update college set worklocation= #{worklocation} , industry = #{industry},salary =#{salary} 
+		,position= #{position} where phone=#{phone}
+	</update>
+	<update id="updateself_evaluation" parameterType="com.po.MyCollege" >
+		update college set selfevaluation= #{selfevaluation}where phone=#{phone}
+	</update>
+	
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 </mapper>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .locationSelect {
     margin-top: 20px;
 }
@@ -16,11 +17,30 @@
 
 .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
     height: 45px;
+=======
+.locationSelect{
+	margin-top: 20px;
+}
+
+.input-group{
+	 margin-bottom: 5px;
+    margin-left: -15px;
+	height: 53px;
+    width: 960px;
+}
+.input-group .form-control{
+	width: 865.2px;
+    height: 45px;
+}
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+	height: 45px;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
     margin-top: -8px;
     margin-left: -2px;
     width: 125px;
 }
 
+<<<<<<< HEAD
 #selectBtn {
     background-color: #239bd2;
     border: 1px solid #239bd2;
@@ -121,15 +141,108 @@ ul li {
     height: 20px;
     background-color: #fff;
     -webkit-appearance: none;
+=======
+#selectBtn{
+	background-color: #239bd2;
+	border:1px solid #239bd2;
+}
+#input_select{
+	border:3px solid #239bd2;
+}
+.box1{
+	width: 990px;
+	height: 200px;
+	border:1px solid #e1e1e4;
+	background-color: #efeff4;
+	color: #000;
+	padding-top: 27px;
+	padding-left: 0px;
+}
+
+.glyphicon{
+	top:3px;
+}
+ul{
+	list-style: none;
+}
+ul li{
+	 float: left;
+	 margin-left: 10px;
+}
+.hasSelected li {
+	background-color:  #239bd2;
+	color: #fff;
+	padding: 2px;
+	cursor: default;
+}
+.hasSelected li span{
+	cursor: pointer;
+}
+.hasSelected .main{
+	background-color:#efeff4; 
+	color: #000;
+	
+}
+
+.Industry li{
+	cursor: pointer;
+	padding-right: 3px;
+	padding-left: 3px;
+	border-radius: 2px;
+
+}
+.Industry li:hover{
+	background-color: #239bd2;
+	color: #fff;
+}
+.active{
+	background-color: #239bd2;
+	color: #fff;
+}
+.context{
+	margin-top: 20px;
+	width: 990px;
+	/*height: 200px;*/
+	background-color: #fff;
+	padding-left: 0px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+.top{
+	margin-left: 0px;
+	width: 990px;
+	padding-top: 20px;
+	border-bottom: 1px solid #ebebeb;
+
+}
+
+.top .top_main{
+	margin-left: 20px;
+    margin-bottom: 10px;
+}
+.top .top_main button{
+	margin-top: -10px;
+	margin-left: 10px;
+}
+.input_checkbox{
+	 width: 20px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-appearance:none;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
     border: 1px solid #c9c9c9;
     border-radius: 2px;
     outline: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 /*.input_checkbox:checked{
 	background:url("./img/checked.png") no-repeat center;
 }
 */
+<<<<<<< HEAD
 input[type=checkbox]:checked {
 
     background: url("../img/checked.png") no-repeat center;
@@ -226,5 +339,91 @@ input[type=checkbox]:checked {
 
 .pagination li {
     margin-left: 0px;
+=======
+input[type=checkbox]:checked{
+
+   background: url("../img/checked.png")no-repeat center;
+}
+.info{
+	padding-left: 0px;
+}
+.info li{
+	margin-left: 20px;
+	display: inline-block;
+	width: 97%;
+	border-bottom: 1.5px dashed #ebebeb;
+}
+
+.info li div,input{
+	float: left;
+}
+.info li input{
+	margin-top: 60px;
+}
+.info .img_position{
+	margin-top: 20px;
+	margin-bottom: 30px;
+	margin-left: 10px;
+}
+.info .btns{
+	float: right;
+	margin-top: 30px;
+}
+.info .jobinfo{
+	position: relative;
+	margin-top: 20px;
+	margin-left: 10px;
+	    width:300px;
+
+}
+.info .jobinfo a{
+	position: absolute;
+	top: 0px;
+	display: inline-block;
+	font-size: 18px;
+	text-decoration: none;
+}
+.info .jobinfo .depart{
+	margin-top: 10px;
+	position: absolute;
+	top: 34px;
+	left: 18px;
+}
+
+.info .jobinfo .location{
+	position: absolute;
+	top: 75px;
+	left: 18px;
+}
+.enterpriseinfo {
+	position: relative;
+	margin-top: 20px;
+	width: 320px;
+
+}
+.enterpriseinfo a{
+	position: absolute;
+	left: -2px;
+	text-decoration: none;
+	top: 11px;
+	font-size: 18px;
+}
+.enterpriseinfo .type{
+	position: absolute;
+	top: 52px;
+	left: -2px;
+
+}
+
+.pagination{
+	position: relative;
+	left: 50%;
+	top: 0px;
+	margin-left: -230px;
+
+}
+.pagination li{
+	margin-left: 0px;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 
 }

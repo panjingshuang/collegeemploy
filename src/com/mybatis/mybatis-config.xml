@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
+<<<<<<< HEAD
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
@@ -18,4 +19,21 @@
         <mapper resource="com/mybatis/CollectionJobMapper.xml"/>
         <mapper resource="com/mybatis/ApplyJobMapper.xml"/>
     </mappers>
+=======
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<settings>
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="aggressiveLazyLoading" value="false"/>
+	</settings>
+	<mappers>
+		<mapper resource="com/mybatis/CollegeMapper.xml"/>
+		<mapper resource="com/mybatis/EnterpriseMapper.xml"/>
+		<mapper resource="com/mybatis/EducationMapper.xml"/>
+		<mapper resource="com/mybatis/JobListMapper.xml"/>
+	</mappers>
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 </configuration>

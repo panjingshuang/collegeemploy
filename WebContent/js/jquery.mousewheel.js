@@ -7,7 +7,11 @@
  */
 
 (function (factory) {
+<<<<<<< HEAD
     if (typeof define === 'function' && define.amd) {
+=======
+    if ( typeof define === 'function' && define.amd ) {
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
         // AMD. Register as an anonymous module.
         define(['jquery'], factory);
     } else if (typeof exports === 'object') {
@@ -19,6 +23,7 @@
     }
 }(function ($) {
 
+<<<<<<< HEAD
     var toFix = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
         toBind = ('onwheel' in document || document.documentMode >= 9) ?
             ['wheel'] : ['mousewheel', 'DomMouseScroll', 'MozMousePixelScroll'],
@@ -28,16 +33,34 @@
     if ($.event.fixHooks) {
         for (var i = toFix.length; i;) {
             $.event.fixHooks[toFix[--i]] = $.event.mouseHooks;
+=======
+    var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
+        toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
+                    ['wheel'] : ['mousewheel', 'DomMouseScroll', 'MozMousePixelScroll'],
+        slice  = Array.prototype.slice,
+        nullLowestDeltaTimeout, lowestDelta;
+
+    if ( $.event.fixHooks ) {
+        for ( var i = toFix.length; i; ) {
+            $.event.fixHooks[ toFix[--i] ] = $.event.mouseHooks;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
         }
     }
 
     var special = $.event.special.mousewheel = {
         version: '3.1.12',
 
+<<<<<<< HEAD
         setup: function () {
             if (this.addEventListener) {
                 for (var i = toBind.length; i;) {
                     this.addEventListener(toBind[--i], handler, false);
+=======
+        setup: function() {
+            if ( this.addEventListener ) {
+                for ( var i = toBind.length; i; ) {
+                    this.addEventListener( toBind[--i], handler, false );
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
                 }
             } else {
                 this.onmousewheel = handler;
@@ -47,10 +70,17 @@
             $.data(this, 'mousewheel-page-height', special.getPageHeight(this));
         },
 
+<<<<<<< HEAD
         teardown: function () {
             if (this.removeEventListener) {
                 for (var i = toBind.length; i;) {
                     this.removeEventListener(toBind[--i], handler, false);
+=======
+        teardown: function() {
+            if ( this.removeEventListener ) {
+                for ( var i = toBind.length; i; ) {
+                    this.removeEventListener( toBind[--i], handler, false );
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
                 }
             } else {
                 this.onmousewheel = null;
@@ -60,7 +90,11 @@
             $.removeData(this, 'mousewheel-page-height');
         },
 
+<<<<<<< HEAD
         getLineHeight: function (elem) {
+=======
+        getLineHeight: function(elem) {
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
             var $elem = $(elem),
                 $parent = $elem['offsetParent' in $.fn ? 'offsetParent' : 'parent']();
             if (!$parent.length) {
@@ -69,7 +103,11 @@
             return parseInt($parent.css('fontSize'), 10) || parseInt($elem.css('fontSize'), 10) || 16;
         },
 
+<<<<<<< HEAD
         getPageHeight: function (elem) {
+=======
+        getPageHeight: function(elem) {
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
             return $(elem).height();
         },
 
@@ -80,17 +118,26 @@
     };
 
     $.fn.extend({
+<<<<<<< HEAD
         mousewheel: function (fn) {
             return fn ? this.bind('mousewheel', fn) : this.trigger('mousewheel');
         },
 
         unmousewheel: function (fn) {
+=======
+        mousewheel: function(fn) {
+            return fn ? this.bind('mousewheel', fn) : this.trigger('mousewheel');
+        },
+
+        unmousewheel: function(fn) {
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
             return this.unbind('mousewheel', fn);
         }
     });
 
 
     function handler(event) {
+<<<<<<< HEAD
         var orgEvent = event || window.event,
             args = slice.call(arguments, 1),
             delta = 0,
@@ -99,10 +146,21 @@
             absDelta = 0,
             offsetX = 0,
             offsetY = 0;
+=======
+        var orgEvent   = event || window.event,
+            args       = slice.call(arguments, 1),
+            delta      = 0,
+            deltaX     = 0,
+            deltaY     = 0,
+            absDelta   = 0,
+            offsetX    = 0,
+            offsetY    = 0;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
         event = $.event.fix(orgEvent);
         event.type = 'mousewheel';
 
         // Old school scrollwheel delta
+<<<<<<< HEAD
         if ('detail' in orgEvent) {
             deltaY = orgEvent.detail * -1;
         }
@@ -118,6 +176,15 @@
 
         // Firefox < 17 horizontal scrolling related to DOMMouseScroll event
         if ('axis' in orgEvent && orgEvent.axis === orgEvent.HORIZONTAL_AXIS) {
+=======
+        if ( 'detail'      in orgEvent ) { deltaY = orgEvent.detail * -1;      }
+        if ( 'wheelDelta'  in orgEvent ) { deltaY = orgEvent.wheelDelta;       }
+        if ( 'wheelDeltaY' in orgEvent ) { deltaY = orgEvent.wheelDeltaY;      }
+        if ( 'wheelDeltaX' in orgEvent ) { deltaX = orgEvent.wheelDeltaX * -1; }
+
+        // Firefox < 17 horizontal scrolling related to DOMMouseScroll event
+        if ( 'axis' in orgEvent && orgEvent.axis === orgEvent.HORIZONTAL_AXIS ) {
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
             deltaX = deltaY * -1;
             deltaY = 0;
         }
@@ -126,6 +193,7 @@
         delta = deltaY === 0 ? deltaX : deltaY;
 
         // New school wheel delta (wheel event)
+<<<<<<< HEAD
         if ('deltaY' in orgEvent) {
             deltaY = orgEvent.deltaY * -1;
             delta = deltaY;
@@ -141,12 +209,26 @@
         if (deltaY === 0 && deltaX === 0) {
             return;
         }
+=======
+        if ( 'deltaY' in orgEvent ) {
+            deltaY = orgEvent.deltaY * -1;
+            delta  = deltaY;
+        }
+        if ( 'deltaX' in orgEvent ) {
+            deltaX = orgEvent.deltaX;
+            if ( deltaY === 0 ) { delta  = deltaX * -1; }
+        }
+
+        // No change actually happened, no reason to go any further
+        if ( deltaY === 0 && deltaX === 0 ) { return; }
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
 
         // Need to convert lines and pages to pixels if we aren't already in pixels
         // There are three delta modes:
         //   * deltaMode 0 is by pixels, nothing to do
         //   * deltaMode 1 is by lines
         //   * deltaMode 2 is by pages
+<<<<<<< HEAD
         if (orgEvent.deltaMode === 1) {
             var lineHeight = $.data(this, 'mousewheel-line-height');
             delta *= lineHeight;
@@ -155,11 +237,22 @@
         } else if (orgEvent.deltaMode === 2) {
             var pageHeight = $.data(this, 'mousewheel-page-height');
             delta *= pageHeight;
+=======
+        if ( orgEvent.deltaMode === 1 ) {
+            var lineHeight = $.data(this, 'mousewheel-line-height');
+            delta  *= lineHeight;
+            deltaY *= lineHeight;
+            deltaX *= lineHeight;
+        } else if ( orgEvent.deltaMode === 2 ) {
+            var pageHeight = $.data(this, 'mousewheel-page-height');
+            delta  *= pageHeight;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
             deltaY *= pageHeight;
             deltaX *= pageHeight;
         }
 
         // Store lowest absolute delta to normalize the delta values
+<<<<<<< HEAD
         absDelta = Math.max(Math.abs(deltaY), Math.abs(deltaX));
 
         if (!lowestDelta || absDelta < lowestDelta) {
@@ -167,25 +260,49 @@
 
             // Adjust older deltas if necessary
             if (shouldAdjustOldDeltas(orgEvent, absDelta)) {
+=======
+        absDelta = Math.max( Math.abs(deltaY), Math.abs(deltaX) );
+
+        if ( !lowestDelta || absDelta < lowestDelta ) {
+            lowestDelta = absDelta;
+
+            // Adjust older deltas if necessary
+            if ( shouldAdjustOldDeltas(orgEvent, absDelta) ) {
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
                 lowestDelta /= 40;
             }
         }
 
         // Adjust older deltas if necessary
+<<<<<<< HEAD
         if (shouldAdjustOldDeltas(orgEvent, absDelta)) {
             // Divide all the things by 40!
             delta /= 40;
+=======
+        if ( shouldAdjustOldDeltas(orgEvent, absDelta) ) {
+            // Divide all the things by 40!
+            delta  /= 40;
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
             deltaX /= 40;
             deltaY /= 40;
         }
 
         // Get a whole, normalized value for the deltas
+<<<<<<< HEAD
         delta = Math[delta >= 1 ? 'floor' : 'ceil'](delta / lowestDelta);
         deltaX = Math[deltaX >= 1 ? 'floor' : 'ceil'](deltaX / lowestDelta);
         deltaY = Math[deltaY >= 1 ? 'floor' : 'ceil'](deltaY / lowestDelta);
 
         // Normalise offsetX and offsetY properties
         if (special.settings.normalizeOffset && this.getBoundingClientRect) {
+=======
+        delta  = Math[ delta  >= 1 ? 'floor' : 'ceil' ](delta  / lowestDelta);
+        deltaX = Math[ deltaX >= 1 ? 'floor' : 'ceil' ](deltaX / lowestDelta);
+        deltaY = Math[ deltaY >= 1 ? 'floor' : 'ceil' ](deltaY / lowestDelta);
+
+        // Normalise offsetX and offsetY properties
+        if ( special.settings.normalizeOffset && this.getBoundingClientRect ) {
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
             var boundingRect = this.getBoundingClientRect();
             offsetX = event.clientX - boundingRect.left;
             offsetY = event.clientY - boundingRect.top;
@@ -209,9 +326,13 @@
         // handle multiple device types that give different
         // a different lowestDelta
         // Ex: trackpad = 3 and mouse wheel = 120
+<<<<<<< HEAD
         if (nullLowestDeltaTimeout) {
             clearTimeout(nullLowestDeltaTimeout);
         }
+=======
+        if (nullLowestDeltaTimeout) { clearTimeout(nullLowestDeltaTimeout); }
+>>>>>>> fbfe18d1c5300530420e3ecf43f68621616c954e
         nullLowestDeltaTimeout = setTimeout(nullLowestDelta, 200);
 
         return ($.event.dispatch || $.event.handle).apply(this, args);
